@@ -17,7 +17,7 @@ router.post("/generate", async (request: Request, response: Response) => {
 
         console.log(fields)
 
-        const filename = "static/relatorio.pdf"
+        const filename = "static/template/relatorio-template.pdf"
 
         const pdf = new PdfHandler({ fields, template_path: "src/relatorio-template.pdf", output_path: filename })
         
