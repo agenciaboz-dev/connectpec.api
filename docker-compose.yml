@@ -1,0 +1,25 @@
+name: connectpec.api
+
+services:
+  api:
+    image: agenciaboz/connectpec.api
+    container_name: boz.api
+    environment:
+      - PORT=8090
+      - DATABASE_URL=mysql://boz:Ewhblt69%21%40%23@boz.app.br:3306/connectpec
+      - URL=https://connectpec.boz.app.br
+    ports:
+      - "8090:8090"
+    network_mode: "host"
+    restart: unless-stopped
+    volumes:
+      - static_volume:/app/static
+    deploy:
+      resources:
+        limits:
+          cpus: '0.25'
+          memory: 256M
+
+volumes:
+  static_volume:
+    name: "connectpec_static_files"
