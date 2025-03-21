@@ -47,6 +47,7 @@ export type FinancialAnalysisForm = {
     porcentagemAoMes: number | string | null
     previsaoDeEntrada: string | null
     previsaoDeAbate: string | null
+    versaoEData: string
 }
 
 export interface InvestmentStudyForm {

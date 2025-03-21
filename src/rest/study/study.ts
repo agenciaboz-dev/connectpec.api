@@ -23,7 +23,7 @@ router.post("/generate", async (request: Request, response: Response) => {
         
         await pdf.fillForm()
 
-        response.json({url: `http://192.168.15.20:8090/${filename}`})
+        response.json({ url: `https://api.connectpec.boz.app.br/${filename}` })
     } catch (error) {
         console.log(error)
         response.status(500).send(error)
