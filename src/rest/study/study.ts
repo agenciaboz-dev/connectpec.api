@@ -17,9 +17,9 @@ router.post("/generate", async (request: Request, response: Response) => {
 
         console.log(fields)
 
-        const filename = "static/template/relatorio-template.pdf"
+        const filename = "static/relatorios/relatorio.pdf"
 
-        const pdf = new PdfHandler({ fields, template_path: "src/relatorio-template.pdf", output_path: filename })
+        const pdf = new PdfHandler({ fields, template_path: "static/template/relatorio-template.pdf", output_path: filename })
         
         await pdf.fillForm()
 
