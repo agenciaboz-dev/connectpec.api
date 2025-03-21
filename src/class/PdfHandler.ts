@@ -1,4 +1,4 @@
-import { readFileSync, writeFileSync } from "fs"
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "fs"
 import { WithoutFunctions } from "./helpers"
 import { PDFDocument, PDFForm } from "pdf-lib"
 import path from "path"
@@ -12,7 +12,8 @@ export interface PdfField {
 
 export class PdfHandler {
     template_path: string
-    output_path: string
+    output_dir: string
+    filename: string
     font?: { regular: string; bold: string }
     fields: PdfField[]
 
@@ -21,7 +22,8 @@ export class PdfHandler {
 
     constructor(data: WithoutFunctions<PdfHandler>) {
         this.template_path = data.template_path
-        this.output_path = data.output_path
+        this.output_dir = data.output_dir
+        this.filename = data.filename
         this.font = data.font
         this.fields = data.fields
     }
@@ -79,10 +81,14 @@ export class PdfHandler {
 
     async save() {
         if (!this.document) {
-            throw 'documento não inicializado'
+            throw "documento não inicializado"
+        }
+
+        if (!existsSync(this.output_dir)) {
+            mkdirSync(this.output_dir, { recursive: true })
         }
 
         const file = await this.document.save()
-        writeFileSync(this.output_path, file)
+        writeFileSync(path.join(this.output_dir, this.filename), file)
     }
 }

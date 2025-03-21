@@ -17,13 +17,15 @@ router.post("/generate", async (request: Request, response: Response) => {
 
         console.log(fields)
 
-        const filename = "static/relatorios/relatorio.pdf"
+        const filename = "relatorio.pdf"
+        const output_dir = "static/relatorios/"
+        const fullpath = output_dir + filename
 
-        const pdf = new PdfHandler({ fields, template_path: "static/template/relatorio-template.pdf", output_path: filename })
-        
+        const pdf = new PdfHandler({ fields, template_path: "static/template/relatorio-template.pdf", output_dir, filename })
+
         await pdf.fillForm()
 
-        response.json({ url: `https://api.connectpec.boz.app.br/${filename}` })
+        response.json({ url: `https://api.connectpec.boz.app.br/${fullpath}` })
     } catch (error) {
         console.log(error)
         response.status(500).send(error)
