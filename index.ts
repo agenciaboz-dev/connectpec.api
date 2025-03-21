@@ -40,7 +40,7 @@ app.use(
 app.use(bodyParser.json({ limit: "10000mb" }))
 app.use(bodyParser.urlencoded({ extended: false, limit: "10000mb" }))
 app.use(cookieParser())
-app.use(fileUpload)
+// app.use(fileUpload)
 app.use("/", router)
 app.use(
     "/static",
