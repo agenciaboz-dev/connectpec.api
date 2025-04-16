@@ -9,6 +9,8 @@ export type ConfinementStudyForm = {
     quebraDeViagemEmKg: number | string | null
     pesoConfinamentoKg: number | string | null
     pesoConfinamentoArroba: number | string | null
+    rendimentoNegociado: number | string | null
+    pesoConfinamentoArrobaNegociado: number | string | null
     distanciaDaOrigemAoConfinamento: number | string | null
     custoDoFretePorKm: number | string | null
     quantidadeDeBoisPorCarreta: number | string | null
@@ -26,21 +28,24 @@ export type ConfinementStudyForm = {
     vendaPesoEmArroba: number | string | null
     receitaPorAnimal: number | string | null
 }
-
 export type FinancialAnalysisForm = {
     valorDiaria: number | string | null
+    valorArrobaProduzida: number | string | null
     subsidio: number | string | null
     ganhoEmArrobaOrigem: number | string | null
     ganhoEmArrobaConfinamento: number | string | null
+    ganhoEmArrobaConfinamentoNegociado: number | string | null
     freteResultado: number | string | null
     comissaoEmPorcentagem: number | string | null
     comissaoEmReais: number | string | null
     impostosETaxas: number | string | null
-    compra: number | string | null // compra = custoPorAnimal
-    receitaBruta: number | string | null // receitaBruta = receitaPorAnimal
+    compra: number | string | null
+    receitaBruta: number | string | null
     receitaLiquida: number | string | null
-    confinamento: number | string | null // confinamento = (-1) * despesaPorAnimal
+    confinamento: number | string | null
+    confinamentoArrobaProduzida: number | string | null
     despesaPorAnimal: number | string | null
+    despesaPorAnimalNegociado: number | string | null
     investimentoInicial: number | string | null
     resultadoLiquido: number | string | null
     prazo: string | null
@@ -49,8 +54,8 @@ export type FinancialAnalysisForm = {
     previsaoDeAbate: string | null
     versaoEData: string
 }
-
 export interface InvestmentStudyForm {
-    confinementStudyForm: ConfinementStudyForm,
+    simulation: string
+    confinementStudyForm: ConfinementStudyForm
     financialAnalysisForm: FinancialAnalysisForm
 }

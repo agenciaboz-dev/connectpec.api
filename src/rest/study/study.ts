@@ -20,8 +20,9 @@ router.post("/generate", async (request: Request, response: Response) => {
         const filename = "relatorio.pdf"
         const output_dir = "static/relatorios/"
         const fullpath = output_dir + filename
+        const chosenSimulation = data.simulation
 
-        const pdf = new PdfHandler({ fields, template_path: "static/template/relatorio-template.pdf", output_dir, filename })
+        const pdf = new PdfHandler({ fields, template_path: `static/template/template_${chosenSimulation}.pdf`, output_dir, filename })
 
         await pdf.fillForm()
 
