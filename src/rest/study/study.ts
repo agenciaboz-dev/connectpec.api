@@ -28,7 +28,7 @@ router.post("/generate", async (request: Request, response: Response) => {
         await pdf.fillForm()
 
         // response.json({ url: `http://192.168.15.5:8090/${fullpath}` })
-        response.json({ url: `https://api.connectpec.boz.app.br/${fullpath}` })
+        response.json({ url: `https://api.connectpec.boz.app.br/${fullpath}?time=${new Date().getTime()}` })
     } catch (error) {
         console.log(error)
         response.status(500).send(error)
