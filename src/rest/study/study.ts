@@ -23,11 +23,11 @@ router.post("/generate", async (request: Request, response: Response) => {
         const chosenSimulation = data.simulation
         console.log({ chosenSimulation })
 
-        const pdf = new PdfHandler({ fields, template_path: `static/template/template_${chosenSimulation}.pdf`, output_dir, filename })
+        const pdf = new PdfHandler({ fields, template_path: `templates/template_${chosenSimulation}.pdf`, output_dir, filename })
 
         await pdf.fillForm()
 
-        // response.json({ url: `http://192.168.15.25:8090/${fullpath}?time=${new Date().getTime()}` })
+        // response.json({ url: `http://192.168.15.4:8090/${fullpath}?time=${new Date().getTime()}` })
         response.json({ url: `https://api.connectpec.boz.app.br/${fullpath}?time=${new Date().getTime()}` })
     } catch (error) {
         console.log(error)
