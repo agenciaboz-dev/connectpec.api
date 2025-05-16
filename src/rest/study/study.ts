@@ -23,7 +23,7 @@ router.post("/generate", async (request: Request, response: Response) => {
         const chosenSimulation = data.simulation
         console.log({ chosenSimulation })
 
-        const pdf = new PdfHandler({ fields, template_path: `templates/template_${chosenSimulation}.pdf`, output_dir, filename })
+        const pdf = new PdfHandler({ fields, template_path: `static/templates/template_${chosenSimulation}.pdf`, output_dir, filename })
 
         await pdf.fillForm()
 
