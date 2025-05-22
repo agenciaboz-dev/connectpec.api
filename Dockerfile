@@ -38,4 +38,5 @@ COPY --from=build /app/prisma ./prisma
 COPY --from=build /app/static/templates ./static/templates
 
 # Start the application
+EXPOSE 8090
 CMD ["/bin/bash", "-c", "node dist/index.js"]
