@@ -16,6 +16,7 @@ export type ConfinementStudyForm = {
     numeroDeCabecasPorCarreta: number | string | null
     custoDoFretePorAnimal: number | string | null
     custoDoFretePorArroba: number | string | null
+    subsidio: number | string | null
     ganhoMedioDiarioEmConfinamento: number | string | null
     diariasDeEngorda: number | string | null
     pesoAproximadoNoAbateEmKg: number | string | null
@@ -31,7 +32,6 @@ export type ConfinementStudyForm = {
 export type FinancialAnalysisForm = {
     valorDiaria: number | string | null
     valorArrobaProduzida: number | string | null
-    subsidio: number | string | null
     ganhoEmArrobaOrigem: number | string | null
     ganhoEmArrobaConfinamento: number | string | null
     ganhoEmArrobaConfinamentoNegociado: number | string | null
@@ -60,7 +60,7 @@ export interface InvestmentStudyForm {
     telefoneContato: string | null
     emailContato: string | null
     siteContato: string | null
-    simulation: string
+    simulation: string | null
     confinementStudyForm: ConfinementStudyForm
     financialAnalysisForm: FinancialAnalysisForm
 }
