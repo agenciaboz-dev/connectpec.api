@@ -11,6 +11,7 @@ export type ConfinementStudyForm = {
     pesoConfinamentoArroba: number | string | null
     rendimentoNegociado: number | string | null
     pesoConfinamentoArrobaNegociado: number | string | null
+    responsavelPeloFreteInicial: string | null
     distanciaDaOrigemAoConfinamento: number | string | null
     custoDoFretePorKm: number | string | null
     numeroDeCabecasPorCarreta: number | string | null
