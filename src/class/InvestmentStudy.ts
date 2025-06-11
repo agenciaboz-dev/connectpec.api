@@ -1,6 +1,12 @@
+export type DocumentInfo = {
+    telefoneContato: string | null
+    emailContato: string | null
+    siteContato: string | null
+    versaoEData: string | null
+}
 export type ConfinementStudyForm = {
     pesoOrigemKg: number | string | null
-    rendimento: number | string
+    rendimento: number | string | null
     pesoOrigemArroba: number | string | null
     custoDaCompraPorArroba: number | string | null
     custoDaCompraPorKg: number | string | null
@@ -55,13 +61,10 @@ export type FinancialAnalysisForm = {
     porcentagemAoMesNegociado: number | string | null
     previsaoDeEntrada: string | null
     previsaoDeAbate: string | null
-    versaoEData: string
 }
 export interface InvestmentStudyForm {
-    telefoneContato: string | null
-    emailContato: string | null
-    siteContato: string | null
     simulation: string | null
+    documentInfo: DocumentInfo
     confinementStudyForm: ConfinementStudyForm
     financialAnalysisForm: FinancialAnalysisForm
 }

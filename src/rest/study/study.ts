@@ -7,7 +7,7 @@ router.post("/generate", async (request: Request, response: Response) => {
     const data = request.body as InvestmentStudyForm
 
     try {
-        const values = { ...data.confinementStudyForm, ...data.financialAnalysisForm }
+        const values = { ...data.documentInfo, ...data.confinementStudyForm, ...data.financialAnalysisForm }
         const fields: PdfField[] = []
 
         Object.entries(values).forEach(([key, value]) => {
