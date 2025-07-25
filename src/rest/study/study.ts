@@ -55,6 +55,7 @@ router.post("/generate", async (request: Request, response: Response) => {
         })
 
         await pdf.fillForm()
+        await pdf.flatten()
 
         // response.json({ url: `http://192.168.15.4:8090/${fullpath}?time=${new Date().getTime()}` })
         response.json({ url: `https://api.connectpec.boz.app.br/${fullpath}?time=${new Date().getTime()}` })

@@ -34,9 +34,26 @@ export class PdfHandler {
         this.form = this.document.getForm()
     }
 
+    async flatten() {
+        if (!this.form || !this.document) {
+            await this.init()
+        }
+
+        if (!this.form) {
+            throw "Falha na inicialização do formulário"
+        }
+
+        this.form.flatten()
+        await this.save()
+    }
+
     async fillForm() {
         if (!this.form || !this.document) {
             await this.init()
+        }
+
+        if (!this.form) {
+            throw "Falha na inicialização do formulário"
         }
 
         // todo CONFIGURAR FONTES
