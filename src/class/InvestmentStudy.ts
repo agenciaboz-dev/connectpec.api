@@ -11,6 +11,8 @@ export type ConfinementStudyForm = {
     custoDaCompraPorArroba: number | string | null
     custoDaCompraPorKg: number | string | null
     custoPorAnimal: number | string | null
+    comissaoEmPorcentagem: number | string | null
+    comissaoEmReais: number | string | null
     quebraDeViagemEmPorcentagem: number | string | null
     quebraDeViagemEmKg: number | string | null
     pesoConfinamentoKg: number | string | null
@@ -43,8 +45,6 @@ export type FinancialAnalysisForm = {
     ganhoEmArrobaConfinamento: number | string | null
     ganhoEmArrobaConfinamentoNegociado: number | string | null
     freteResultado: number | string | null
-    comissaoEmPorcentagem: number | string | null
-    comissaoEmReais: number | string | null
     impostosETaxas: number | string | null
     compra: number | string | null
     receitaBruta: number | string | null
